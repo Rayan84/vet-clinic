@@ -28,5 +28,35 @@ BEGIN;
   UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
 COMMIT;
 
+INSERT INTO owners VALUES (DEFAULT, 'Sam Smith', 34);
+INSERT INTO owners VALUES (DEFAULT, 'Jennifer Orwell', 19);
+INSERT INTO owners VALUES (DEFAULT, 'Bob', 45);
+INSERT INTO owners VALUES (DEFAULT, 'Melody Pond', 77);
+INSERT INTO owners VALUES (DEFAULT, 'Dean Winchester', 14);
+INSERT INTO owners VALUES (DEFAULT, 'Jodie Whittaker', 38);
+INSERT INTO owners VALUES (DEFAULT, 'Sam Smith', 34);
+INSERT INTO owners VALUES (DEFAULT, 'Jennifer Orwell', 19);
+INSERT INTO owners VALUES (DEFAULT, 'Bob', 45);
+INSERT INTO owners VALUES (DEFAULT, 'Melody Pond', 77);
+INSERT INTO owners VALUES (DEFAULT, 'Dean Winchester', 14);
+INSERT INTO owners VALUES (DEFAULT, 'Jodie Whittaker', 38);
+INSERT INTO owners VALUES (DEFAULT, 'Sam Smith', 34);
+INSERT INTO owners VALUES (DEFAULT, 'Jennifer Orwell', 19);
+INSERT INTO owners VALUES (DEFAULT, 'Bob', 45);
+INSERT INTO owners VALUES (DEFAULT, 'Melody Pond', 77);
+INSERT INTO species VALUES (DEFAULT, 'Pokemon');
+INSERT INTO species VALUES (DEFAULT, 'Digimon');
+UPDATE animals SET species_id = 2 WHERE name LIKE '%mon';
+UPDATE animals SET species_id = 1 WHERE name NOT LIKE '%mon';
+UPDATE animals SET owner_id = 1 WHERE name LIKE 'Agumon';
+UPDATE animals SET owner_id = 2 WHERE name LIKE 'Gabumon' OR name LIKE 'Pikachu';
+UPDATE animals SET owner_id = 3 WHERE name LIKE 'Devimon' OR name LIKE 'Plantmon';
+UPDATE animals SET owner_id = 4 WHERE name LIKE 'Charmander' OR name LIKE 'Squirtle' OR name LIKE 'Blossom';
+UPDATE animals SET owner_id = 5 WHERE name LIKE 'Angemon' OR name LIKE 'Boarmon';
+
+
+
+
+
 
 
