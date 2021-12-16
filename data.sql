@@ -11,3 +11,22 @@ INSERT INTO animals VALUES (7, 'Squirtle', '1993-04-02', 3, false, -12.13);
 INSERT INTO animals VALUES (8, 'Angemon', '2005-06-12', 1, true, -45);
 INSERT INTO animals VALUES (9, 'Boarmon', '2005-06-07', 7, true, 20.4);
 INSERT INTO animals VALUES (10, 'Blossom', '1998-10-13', 3, true, 17);
+BEGIN;
+UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
+UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
+COMMIT;
+TABLE animals;
+BEGIN;
+DELETE FROM animals;
+ROLLBACK;
+TABLE animals;
+BEGIN;
+  DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+  SAVEPOINT point_one;
+  UPDATE animals SET weight_kg = weight_kg * -1;
+  ROLLBACK TO SAVEPOINT point_one;
+  UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+COMMIT;
+
+
+
