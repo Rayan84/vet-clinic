@@ -1,6 +1,6 @@
-# VET CLINIC DATABASE
+# VET CLINIC
 
-This application is a demonstration of SQL database creation, adding database entries and search queries skills..
+This application is a demonstration of PostgreSQL database creation, adding database entries and search queries skills..
 
 ## Built With
 
