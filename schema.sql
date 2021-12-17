@@ -38,3 +38,11 @@ CREATE TABLE vets (
     age INT,
     date_of_graduation date
 );
+
+CREATE TABLE specializations (
+    id SERIAL PRIMARY KEY NOT NULL,
+    vet_id INT,
+    species_id INT,
+    FOREIGN KEY (vet_id) REFERENCES vets(id),
+    FOREIGN KEY (species_id) REFERENCES species(id)
+);
