@@ -42,3 +42,10 @@ JOIN vets ON visits.vet_id = vets.id
 JOIN species ON species.id = animals.species_id
 WHERE vets.id = 2
 GROUP BY species.name ORDER BY COUNT(species.name) DESC LIMIT 1;
+
+INSERT INTO visits (animal_id, vet_id, date_of_visit) SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
+explain analyze SELECT COUNT(*) FROM visits where animal_id = 4;
+SELECT COUNT(*) FROM visits where animal_id = 4;
+SELECT * FROM visits where vet_id = 2;
+SELECT * FROM owners where email = 'owner_18327@mail.com';
